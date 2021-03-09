@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Veterinária Zandoná</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Latest compiled and minified CSS -->
+
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- Main CSS-->
+<link href="css/main.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div class="container">
+
+		<div class="page-wrapper p-t-130 p-b-100 font-poppins">
+			<div class="wrapper wrapper--w680">
+				<div class="card card-4">
+					<div class="card-body">
+
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Logradouro</th>
+									<th scope="col">Bairro</th>
+									<th scope="col">Localidade</th>
+								</tr>
+							</thead>
+							<tbody th:object="${endereco}">
+
+								<tr>
+									<td th:text="*{logradouro}"></td>
+									<td th:text="*{bairro}"></td>
+									<td th:text="*{localidade}"></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

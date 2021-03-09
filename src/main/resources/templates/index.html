@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Veterinária Zandoná</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Latest compiled and minified CSS -->
+
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- Main CSS-->
+<link href="css/main.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div class="container">
+
+		<div class="page-wrapper p-t-130 p-b-100 font-poppins">
+			<div class="wrapper wrapper--w680">
+				<div class="card card-4">
+					<div class="card-body">
+						<h2 class="title">Mostra endereço</h2>
+
+						<form action="#" th:action="@{/cepEndereco}"
+							th:object="${endereco}">
+							<!-- <input type="hidden" th:value="${endereco.cpf}" th:name="cpf" /> -->
+
+							<div class="row row-space">
+								<div class="col-2">
+									<div class="input-group">
+										<label class="label">CEP:</label> <input
+											class="input--style-4" type="text" th:name="cep">
+									</div>
+								</div>
+							</div>
+
+							<div class="p-t-15">
+								<input type="submit" value="Ver endereço" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
