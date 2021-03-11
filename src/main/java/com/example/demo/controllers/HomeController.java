@@ -24,6 +24,6 @@ public class HomeController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "endereco";
+		return "index";
 	}
 }

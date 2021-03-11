@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Veterinária Zandoná</title>
+<title>Buscar endereços</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <!-- Latest compiled and minified CSS -->
 
@@ -27,25 +27,51 @@
 			<div class="wrapper wrapper--w680">
 				<div class="card card-4">
 					<div class="card-body">
-						<h2 class="title">Mostra endereço</h2>
+						<h2 class="title text-center">Descobrir endereço a partir do
+							CEP</h2>
+						<div>
+							<form action="#" th:action="@{/cepEndereco}"
+								th:object="${endereco}">
+								<!-- <input type="hidden" th:value="${endereco.cpf}" th:name="cpf" /> -->
 
-						<form action="#" th:action="@{/cepEndereco}"
-							th:object="${endereco}">
-							<!-- <input type="hidden" th:value="${endereco.cpf}" th:name="cpf" /> -->
-
-							<div class="row row-space">
-								<div class="col-2">
-									<div class="input-group">
-										<label class="label">CEP:</label> <input
-											class="input--style-4" type="text" th:name="cep">
+								<div class="row row-space">
+									<div class="col-2">
+										<div class="input-group">
+											<label class="label">CEP:</label> <input
+												class="input--style-4" type="text" th:name="cep">
+										</div>
 									</div>
 								</div>
+
+								<div class="p-t-15 mb-5">
+									<input type="submit" value="Ver endereço" />
+								</div>
+							</form>
+							<div th:if="${not #lists.isEmpty(endereco)}">
+
+								<table class="table mt-5">
+									<thead>
+										<tr>
+											<th scope="col">Logradouro</th>
+											<th scope="col">CEP</th>
+											<th scope="col">Bairro</th>
+											<th scope="col">Localidade</th>
+										</tr>
+									</thead>
+									<tbody th:object="${endereco}">
+
+										<tr>
+											<td th:text="*{logradouro}"></td>
+											<td th:text="*{cep}"></td>
+											<td th:text="*{bairro}"></td>
+											<td th:text="*{localidade}"></td>
+										</tr>
+
+									</tbody>
+								</table>
 							</div>
 
-							<div class="p-t-15">
-								<input type="submit" value="Ver endereço" />
-							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
