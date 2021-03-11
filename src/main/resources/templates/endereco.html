@@ -27,25 +27,30 @@
 			<div class="wrapper wrapper--w680">
 				<div class="card card-4">
 					<div class="card-body">
+						<div th:if="${not #lists.isEmpty(endereco)}">
+							
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">Logradouro</th>
+										<th scope="col">CEP</th>
+										<th scope="col">Bairro</th>
+										<th scope="col">Localidade</th>
+									</tr>
+								</thead>
+								<tbody th:object="${endereco}">
 
-						<table class="table">
-							<thead>
-								<tr>
-									<th scope="col">Logradouro</th>
-									<th scope="col">Bairro</th>
-									<th scope="col">Localidade</th>
-								</tr>
-							</thead>
-							<tbody th:object="${endereco}">
+									<tr>
+										<td th:text="*{logradouro}"></td>
+										<td th:text="*{cep}"></td>
+										<td th:text="*{bairro}"></td>
+										<td th:text="*{localidade}"></td>
+									</tr>
 
-								<tr>
-									<td th:text="*{logradouro}"></td>
-									<td th:text="*{bairro}"></td>
-									<td th:text="*{localidade}"></td>
-								</tr>
-
-							</tbody>
-						</table>
+								</tbody>
+							</table>
+							
+						</div>
 					</div>
 				</div>
 			</div>
